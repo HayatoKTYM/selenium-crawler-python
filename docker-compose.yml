@@ -1,0 +1,11 @@
+version: '3'
+services:
+  web:
+    build: .
+    volumes:
+      - .:/app
+    command: ["python", "/app/src/main_screenshot.py"]
+    depends_on:
+      - selenium
+  selenium:
+    image: selenium/standalone-chrome
